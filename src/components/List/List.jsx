@@ -51,7 +51,7 @@ export default function List({ listTask, changeStatus, deleteTask, emptyBox, onC
                 <h2 className='text-gray-400 text-3xl mt-6 font-light'>Список дел пуст</h2>
             </div> 
             ) : 
-            ( <ul className="max-w-lg w-full overflow-y-auto">
+            ( <ul className="max-w-lg w-full overflow-y-auto max-h-96">
                 
                 {listTask.map( (task) => 
                     <Item 
