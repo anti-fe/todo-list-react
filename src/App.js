@@ -4,17 +4,18 @@ import List from "./components/List/List";
 import './index.css'
 
 function App(){
+  const LS = localStorage.getItem("TaskList");
   // Список дел в local storage
   const LSListTask = localStorage.getItem("TaskList") ? JSON.parse(localStorage.getItem("TaskList")) : [];
   // Локальный стейт для списка дел
   const [listTask, setListTask] = useState(LSListTask);
   // Локальный стейт для отображения пустой коробки
-  const [emptyBox, setEmptyBox] = useState(localStorage.getItem("TaskList")                          
-    ?(JSON.parse(localStorage.getItem("TaskList")).length > 0 ? false : true) 
-    : NaN);
+  const [emptyBox, setEmptyBox] = useState(LS ? false : true)
   // При изменении listTask
   useEffect(() => {
-    localStorage.setItem("TaskList", JSON.stringify(listTask));
+    listTask.length < 1 ?
+     localStorage.removeItem("TaskList") : 
+     localStorage.setItem("TaskList", JSON.stringify(listTask));
   }, [listTask])
 
   const onChangeForm = () => {
