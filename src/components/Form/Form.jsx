@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Form({ changeList, onChangeForm }) {
+export default function Form({ changeList }) {
     const [task, setTask] = useState('');
     const [errorInput, setErrorInput] = useState('');
 
@@ -35,7 +35,7 @@ export default function Form({ changeList, onChangeForm }) {
             onChange={(e) => onChangeInput(e)}/>
 
             <button className='px-4 py-2 text-white bg-blue-400 transition rounded-r border
-            focus:outline-none focus:ring-2 hover:bg-slate-100 focus:bg-blue-500'
+            focus:outline-none focus:ring-2 hover:bg-blue-400 focus:bg-blue-500'
             >Добавить</button>
 
         </form>
