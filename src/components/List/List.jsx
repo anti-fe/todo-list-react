@@ -6,7 +6,7 @@ export default function List({ listTask, changeStatus, deleteTask, emptyBox, onC
   return (
     <>
         { emptyBox ? (
-            <div className='box block mt-24'>
+            <div className='box flex flex-col justify-center w-full items-center mt-12'>
                 <div className='empty-box'> 
                 <svg width="197" height="199" viewBox="0 0 197 199" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M99.5 199V105L24.5 64L24 158.5L99.5 199Z" fill="url(#paint0_linear_2_12)"/>
@@ -51,7 +51,7 @@ export default function List({ listTask, changeStatus, deleteTask, emptyBox, onC
                 <h2 className='text-gray-400 text-3xl mt-6 font-light'>Список дел пуст</h2>
             </div> 
             ) : 
-            ( <ul className="max-w-lg w-full">
+            ( <ul className="max-w-lg w-full overflow-y-auto">
                 
                 {listTask.map( (task) => 
                     <Item 

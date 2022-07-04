@@ -18,7 +18,7 @@ export default function Form({ changeList }) {
             changeList(newTask);
             setErrorInput('');
         } else {
-            setErrorInput('Не более 49 и не менее 3 символов');
+            setErrorInput('Не менее 3 и не более 50 символов');
         }
         setTask('');
     }
@@ -31,11 +31,11 @@ export default function Form({ changeList }) {
             className='w-full transition px-4 py-2 border border-r-0 border-gray-300 focus:outline-none focus:ring-2 rounded-l' 
             type="text" 
             value={task}
-            placeholder="Введите задание"
+            placeholder="Введите задачу..."
             onChange={(e) => onChangeInput(e)}/>
 
             <button className='px-4 py-2 text-white bg-blue-400 transition rounded-r border
-            focus:outline-none focus:ring-2 hover:bg-blue-400 focus:bg-blue-500'
+            focus:outline-none focus:ring-2 hover:bg-blue-500 focus:bg-blue-500'
             >Добавить</button>
 
         </form>

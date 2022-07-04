@@ -45,17 +45,20 @@ function App(){
   }
 
   return ( 
-    <div className="App flex flex-col justify-center items-center px-4 mt-12 ">
-      <Form 
-      onChangeForm={onChangeForm}
-      changeList={changeList}/>
-      <List 
-      listTask={listTask}
-      changeStatus={changeStatus}
-      deleteTask={deleteTask}
-      emptyBox={emptyBox}
-      onChangeForm={onChangeForm}
-      />
+    <div className="flex flex-col justify-start pb-6 mt-12 cont-app rounded-md">
+      <h1 className="todo-title font-light px-4 py-2 text-xl w-full h-full text-left mb-10 bg-gray-100 text-gray-400 rounded-t-md">Мои задачи</h1>
+      <div className="px-4 flex flex-col justify-center">
+        <Form 
+        onChangeForm={onChangeForm}
+        changeList={changeList}/>
+        <List 
+        listTask={listTask}
+        changeStatus={changeStatus}
+        deleteTask={deleteTask}
+        emptyBox={emptyBox}
+        onChangeForm={onChangeForm}
+        />
+      </div>
       
     </div>
   );
